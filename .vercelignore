@@ -1,0 +1,22 @@
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Python test caches
+.pytest_cache/
+__pycache__/
+*.py[cod]
+
+# Large training datasets & local data
+backend/data/FUSeg/
+backend/data/test_screenshots/
+backend/data/wound_history.db
+backend/artifacts/evaluation/
+backend/artifacts/visualizations/
+backend/artifacts/*.txt
+backend/artifacts/*.log
+
+# Node dependencies & logs
+node_modules/
+*.log

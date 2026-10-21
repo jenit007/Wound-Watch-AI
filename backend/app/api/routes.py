@@ -21,6 +21,7 @@ router = APIRouter()
 MAX_UPLOAD_BYTES = 10 * 1024 * 1024
 
 @router.get("/health")
+@router.get("/api/health")
 def health():
     return {"status": "ok"}
 

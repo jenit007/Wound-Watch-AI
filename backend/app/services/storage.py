@@ -19,7 +19,12 @@ def get_db_path(custom_path: Path | str | None = None) -> Path:
         p = Path(custom_path)
     else:
         env_val = os.getenv("WOUNDWATCH_DB_PATH")
-        p = Path(env_val) if env_val else DEFAULT_DB_PATH
+        if env_val:
+            p = Path(env_val)
+        elif os.getenv("VERCEL"):
+            p = Path("/tmp") / "wound_history.db"
+        else:
+            p = DEFAULT_DB_PATH
     p.parent.mkdir(parents=True, exist_ok=True)
     return p
 
