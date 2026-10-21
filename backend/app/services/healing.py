@@ -7,6 +7,8 @@ the dataset. We provide a transparent, rule-based clinical preliminary estimate
 derived from published benchmarks (Margolis et al. 2002, Sheehan et al. 2003, EWMA),
 or explicitly return INSUFFICIENT_DATA when parameters are missing.
 """
+from __future__ import annotations
+
 from typing import Any, Mapping
 
 DEFAULT_HEALING_DISCLAIMER = (

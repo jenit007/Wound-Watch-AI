@@ -4,6 +4,8 @@ This module evaluates explicit clinical symptoms, systemic warning signs,
 and wound characteristics to provide transparent preliminary triage guidance.
 Not a clinical diagnosis or medical dispatch system.
 """
+from __future__ import annotations
+
 from typing import Any, Mapping
 
 VALID_RISK_LEVELS = {"LOW", "MODERATE", "HIGH", "URGENT", "UNAVAILABLE"}

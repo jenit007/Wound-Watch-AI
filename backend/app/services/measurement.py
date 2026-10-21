@@ -1,4 +1,6 @@
 """Area and mask-visualization helpers."""
+from __future__ import annotations
+
 from io import BytesIO
 import base64
 import numpy as np

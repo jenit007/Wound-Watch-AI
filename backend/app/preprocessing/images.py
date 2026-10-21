@@ -1,4 +1,6 @@
 """Image validation and preprocessing helpers."""
+from __future__ import annotations
+
 from io import BytesIO
 from PIL import Image, UnidentifiedImageError
 import numpy as np

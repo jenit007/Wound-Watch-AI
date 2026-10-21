@@ -1,4 +1,6 @@
 """Checkpoint loading and real U-Net inference; no fabricated fallback masks."""
+from __future__ import annotations
+
 import os
 from pathlib import Path
 import torch
