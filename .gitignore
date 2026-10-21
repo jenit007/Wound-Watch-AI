@@ -25,3 +25,6 @@ backend/data/FUSeg/
 backend/data/wound_history.db
 backend/data/test_screenshots/
 *.log
+
+.vercel
+.env*

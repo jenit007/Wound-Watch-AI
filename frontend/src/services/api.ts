@@ -2,8 +2,9 @@ import axios from 'axios'
 import type { AnalysisResponse, ClinicalData, HealthResponse, HistoricalMeasurement } from '../types/analysis'
 
 const baseURL = (
-  import.meta.env.VITE_API_BASE_URL ||
-  (import.meta.env.PROD ? '' : 'http://localhost:8000')
+  import.meta.env.PROD
+    ? (import.meta.env.VITE_API_BASE_URL || '')
+    : (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000')
 ).replace(/\/$/, '')
 export const apiClient = axios.create({ baseURL, timeout: 60000 })
 
