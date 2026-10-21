@@ -1,0 +1,18 @@
+{
+  "evaluated_split": "validation",
+  "sample_count": 200,
+  "dice": 0.7653205975392977,
+  "iou": 0.6696406457732939,
+  "precision": 0.8184928004222587,
+  "recall": 0.816147749852613,
+  "dice_std": 0.2427845868241924,
+  "iou_std": 0.2578555603671974,
+  "checkpoint_epoch": 27,
+  "checkpoint_best_val_dice": 0.7653205907344818,
+  "image_size": 224,
+  "limitations": [
+    "Evaluated on the validation split (200 images). FUSeg test-set labels are withheld by challenge organizers.",
+    "No patient identifiers \u2014 cannot guarantee absence of patient overlap between train and validation (split is from the challenge organizers).",
+    "This prototype is not validated for clinical use."
+  ]
+}

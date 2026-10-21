@@ -1,0 +1,17 @@
+seed: 42
+image_size: 224
+batch_size: 4
+epochs: 30
+learning_rate: 0.001
+num_workers: 0
+patience: 7
+
+# FUSeg Challenge root (used by train_segmentation.py --fuseg and evaluate_segmentation.py --fuseg)
+# This path is relative to the backend/ directory. You can use an absolute path if preferred.
+# fuseg_root: data/FUSeg/data/Foot Ulcer Segmentation Challenge
+
+# Original adapter settings (used when --data flag is passed instead of --fuseg)
+# Root expects images/ and masks/ with matching filenames, plus optional metadata.csv
+# metadata.csv columns: filename, patient_id (recommended)
+train_fraction: 0.70
+validation_fraction: 0.15

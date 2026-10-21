@@ -1,0 +1,13 @@
+﻿Loading checkpoint: artifacts\best_unet.pt
+Generating 8 visualizations -> C:\Users\JENIT\Downloads\WoundWatchAI_ML_Backend\backend\artifacts\visualizations
+  Saved: sample_001_0001.png
+  Saved: sample_002_0002.png
+  Saved: sample_003_0003.png
+  Saved: sample_004_0004.png
+  Saved: sample_005_0005.png
+  Saved: sample_006_0006.png
+  Saved: sample_007_0007.png
+  Saved: sample_008_0008.png
+
+Done. 8 panels saved to: C:\Users\JENIT\Downloads\WoundWatchAI_ML_Backend\backend\artifacts\visualizations
+Labels: 'Ground Truth' = annotated by wound professionals | 'Model Prediction' = U-Net output (not clinically validated)

@@ -1,0 +1,29 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.6882792313893635,
+      "val_loss": 1.6569297313690186,
+      "val_dice": 0.06790515035390854,
+      "val_iou": 0.03643132373690605
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.578155279159546,
+      "val_loss": 1.6344530582427979,
+      "val_dice": 0.06560567766427994,
+      "val_iou": 0.035764120519161224
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.4789501031239827,
+      "val_loss": 1.6177699565887451,
+      "val_dice": 0.10378818213939667,
+      "val_iou": 0.05599876120686531
+    }
+  ],
+  "best_val_dice": 0.10378818213939667,
+  "dataset": "FUSeg_Challenge",
+  "patient_ids_used_for_split": false,
+  "split_note": "Official FUSeg challenge train/validation splits. Test split has no labels."
+}

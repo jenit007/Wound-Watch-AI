@@ -1,0 +1,18 @@
+﻿Loading checkpoint: artifacts\best_unet.pt
+Loading FUSeg validation split ...
+Samples: 200   Split: validation (NOTE: test split has no labels)
+
+=======================================================
+EVALUATION RESULTS  (validation split)
+=======================================================
+  Samples   : 200
+  Dice      : 0.7653  ▒ 0.2428
+  IoU       : 0.6696  ▒ 0.2579
+  Precision : 0.8185
+  Recall    : 0.8161
+
+  Results saved to: C:\Users\JENIT\Downloads\WoundWatchAI_ML_Backend\backend\artifacts\evaluation
+
+  NOTE: These are VALIDATION metrics, not test-set metrics.
+  The FUSeg test-set labels are withheld by the challenge organizers.
+=======================================================
