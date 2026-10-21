@@ -27,6 +27,17 @@ MAX_UPLOAD_BYTES = 10 * 1024 * 1024
 def health():
     return {"status": "ok"}
 
+@router.get("/api/diagnostic")
+def diagnostic():
+    service = getattr(router, "segmentation_service", None)
+    return {
+        "status": "ok",
+        "model_ready": service.ready if service else False,
+        "load_error": service.load_error if service else None,
+        "checkpoint_path": str(service.checkpoint_path) if service else None,
+        "checkpoint_exists": service.checkpoint_path.is_file() if service and hasattr(service, "checkpoint_path") else False,
+    }
+
 @router.get("/api/wounds")
 def get_wounds():
     """List all tracked wounds with their latest recorded measurements."""
@@ -96,8 +107,8 @@ async def analyze(image: UploadFile = File(...), clinical_data: str = Form("{}")
         )
     try:
         result = service.predict(image_obj)
-    except RuntimeError:
-        raise HTTPException(status_code=503, detail="Segmentation model is unavailable")
+    except RuntimeError as exc:
+        raise HTTPException(status_code=503, detail=str(exc))
 
     area_cm2 = area_px_to_cm2(result["wound_area_px"], clinical.pixels_per_cm)
     current_recorded_at = clinical.visit_date or datetime.now(timezone.utc).isoformat()

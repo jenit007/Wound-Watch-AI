@@ -20,6 +20,7 @@ class SegmentationService:
                 "backend/artifacts/best_unet.pt",
                 "artifacts/best_unet.pt",
                 str(Path(__file__).resolve().parent.parent.parent / "artifacts" / "best_unet.pt"),
+                str(Path(__file__).resolve().parent.parent.parent / "backend" / "artifacts" / "best_unet.pt"),
             ]
             chosen = None
             for c in candidates:
@@ -46,9 +47,10 @@ class SegmentationService:
             state = checkpoint.get("model_state_dict", checkpoint) if isinstance(checkpoint, dict) else checkpoint
             self.model.load_state_dict(state)
             self.model.to(self.device).eval()
-        except Exception:
+        except Exception as exc:
             self.model = None
-            self.load_error = "Checkpoint could not be loaded; verify its format and model configuration"
+            self.load_error = f"Checkpoint could not be loaded: {exc}"
+            print(f"[ERROR] Failed to load checkpoint {self.checkpoint_path}: {exc}")
     @torch.inference_mode()
     def predict(self, image: Image.Image, pixels_per_cm: float | None = None):
         if not self.ready:
